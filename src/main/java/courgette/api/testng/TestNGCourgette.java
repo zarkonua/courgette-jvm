@@ -54,7 +54,10 @@ public abstract class TestNGCourgette {
 
                 if (RunStatus.OK.equals(runStatus)) {
 
-                    courgetteRunner.createCucumberReport();
+                    try {
+                        courgetteRunner.createCucumberReport();
+                    } catch (Exception ignore) {
+                    }
                     courgetteRunner.createCourgetteReport();
 
                     if (courgetteProperties.isExtentReportsPluginEnabled()) {
